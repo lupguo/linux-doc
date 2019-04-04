@@ -30,12 +30,14 @@
 ::
 
     $userdel -r username
+
 不带选项使用 userdel，只会删除用户。用户的家目录将仍会在/home目录下。要完全的删除用户信息，使用-r选项；
 
 帐号切换
 登录帐号为userA用户状态下，切换到userB用户帐号工作::
 
     $su userB
+
 进入交互模型，输入密码授权进入；
 
 用户的组
@@ -88,12 +90,14 @@
 字母方式::
 
     $chmod userMark(+|-)PermissionsMark
+
 userMark取值：
 
 - u：用户  
 - g：组 
 - o：其它用户 
 - a：所有用户
+
 PermissionsMark取值：
 
 - r:读  
@@ -118,9 +122,11 @@ PermissionsMark取值：
 
 更改文件或目录的拥有者
 ^^^^^^^^^^^^^^^^^^^^^^
+
 ::
 
     $chown username dirOrFile
+
 使用-R选项递归更改该目下所有文件的拥有者::
 
     $chown -R weber server/
@@ -128,6 +134,7 @@ PermissionsMark取值：
 
 环境变量
 --------------------
+
 bashrc与profile都用于保存用户的环境信息，bashrc用于交互式non-loginshell，而profile用于交互式login shell。
 
 | /etc/profile，/etc/bashrc 是系统全局环境变量设定
@@ -147,6 +154,7 @@ bashrc与profile都用于保存用户的环境信息，bashrc用于交互式non-
 - ~/.bashrc也是某用户专有设定文档，可以设定路径，命令别名，每次shell script的执行都会使用它一次
 
 例如，我们可以在这些环境变量中设置自己经常进入的文件路径，以及命令的快捷方式：
+
 ::
 
 	.bashrc

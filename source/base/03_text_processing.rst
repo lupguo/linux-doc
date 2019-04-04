@@ -36,6 +36,7 @@ find 文件查找
 ^^^^^^^^^^^^^^^^^^^^
 
 - 按类型搜索
+
 ::
 
     find . -type d -print  //只列出所有目录
@@ -178,6 +179,7 @@ xargs 能够将输入数据转化为特定命令的命令行参数；这样，�
 \n 是多行文本间的定界符
 
 - 将单行转化为多行输出
+
 ::
 
     cat single.txt | xargs -n 3
@@ -217,16 +219,19 @@ sort 排序
 uniq 消除重复行
 ----------------------------
 - 消除重复行
+
 ::
 
     sort unsort.txt | uniq
 
 - 统计各行在文件中出现的次数
+
 ::
 
     sort unsort.txt | uniq -c
 
 - 找出重复行
+
 ::
 
     sort unsort.txt | uniq -d
@@ -235,13 +240,16 @@ uniq 消除重复行
 
 用tr进行转换
 -------------------------
+
 - 通用用法
+
 ::
 
     echo 12345 | tr '0-9' '9876543210' //加解密转换，替换对应字符
     cat text| tr '\t' ' '  //制表符转空格
 
 - tr删除字符
+
 ::
 
     cat file | tr -d '0-9' // 删除所有数字
@@ -277,16 +285,19 @@ cut 按列切分文本
 ------------------------------
 
 - 截取文件的第2列和第4列
+
 ::
 
     cut -f2,4 filename
 
 - 去文件除第3列的所有列
+
 ::
 
     cut -f3 --complement filename
 
 - -d 指定定界符
+
 ::
 
     cat -f2 -d";" filename
@@ -333,6 +344,7 @@ paste 按列拼接文本
 
 wc 统计行和字符的工具
 --------------------------------------
+
 ::
 
     $wc -l file // 统计行数
@@ -346,11 +358,13 @@ sed 文本替换利器
 ------------------------------
 
 - 首处替换
+
 ::
 
     sed 's/text/replace_text/' file   //替换每一行的第一处匹配的text
 
 - 全局替换
+
 ::
 
     sed 's/text/replace_text/g' file
@@ -368,6 +382,7 @@ sed 文本替换利器
 - 变量转换
 
 已匹配的字符串通过标记&来引用.
+
 ::
 
 	echo this is en example | sed 's/\w+/[&]/g'
@@ -377,6 +392,7 @@ sed 文本替换利器
 - 子串匹配标记
 
 第一个匹配的括号内容使用标记 \1 来引用
+
 ::
 
     sed 's/hello\([0-9]\)/\1/'
@@ -388,6 +404,7 @@ sed通常用单引号来引用；也可使用双引号，使用双引号后，�
     sed 's/$var/HLLOE/'
 
 当使用双引号时，我们可以在sed样式和替换字符串中指定变量；
+
 ::
 
 	eg:
@@ -407,6 +424,7 @@ awk 数据流处理工具
 ---------------------------------
 
 - awk脚本结构
+
 ::
 
     awk ' BEGIN{ statements } statements2 END{ statements } '
@@ -423,11 +441,13 @@ print 打印当前行
 ^^^^^^^^^^^^^^^^^^^^
 
 - 使用不带参数的print时，会打印当前行
+
 ::
 
     echo -e "line1\nline2" | awk 'BEGIN{print "start"} {print } END{ print "End" }'
 
 - print 以逗号分割时，参数以空格定界;
+
 ::
 
 	echo | awk ' {var1 = "v1" ; var2 = "V2"; var3="v3"; \
@@ -435,6 +455,7 @@ print 打印当前行
 	$>v1 V2 v3
 
 - 使用-拼接符的方式（""作为拼接符）;
+
 ::
 
 	echo | awk ' {var1 = "v1" ; var2 = "V2"; var3="v3"; \
@@ -453,21 +474,25 @@ $0:这个变量包含执行过程中当前行的文本内容；
 $1:第一个字段的文本内容；
 
 $2:第二个字段的文本内容；
+
 ::
 
     echo -e "line1 f2 f3\n line2 \n line 3" | awk '{print NR":"$0"-"$1"-"$2}'
 
 - 打印每一行的第二和第三个字段
+
 ::
 
     awk '{print $2, $3}' file
 
 - 统计文件的行数
+
 ::
 
     awk ' END {print NR}' file
 
 - 累加每一行的第一个字段
+
 ::
 
     echo -e "1\n 2\n 3\n 4\n" | awk 'BEGIN{num = 0 ;
@@ -476,6 +501,7 @@ $2:第二个字段的文本内容；
 
 传递外部变量
 ^^^^^^^^^^^^^^^
+
 ::
 
 	var=1000
@@ -484,6 +510,7 @@ $2:第二个字段的文本内容；
 
 用样式对awk处理的行进行过滤
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 ::
 
     awk 'NR < 5' #行号小于5
@@ -505,6 +532,7 @@ $2:第二个字段的文本内容；
 
 在awk中使用循环
 ^^^^^^^^^^^^^^^^^^^^^
+
 ::
 
     for(i=0;i<10;i++){print $i;}
@@ -534,6 +562,7 @@ eg:以下字符串，打印出其中的时间串::
 
 awk结合grep找到指定的服务，然后将其kill掉
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 ::
 
     ps -fe| grep msv8 | grep -v MFORWARD | awk '{print $2}' | xargs kill -9;
@@ -541,11 +570,13 @@ awk结合grep找到指定的服务，然后将其kill掉
 awk实现head、tail命令
 ^^^^^^^^^^^^^^^^^^^^^^
 - head
+
 ::
 
     awk 'NR<=10{print}' filename
 
 - tail
+
 ::
 
     awk '{buffer[NR%10] = $0;} END{for(i=0;i<11;i++){ \
@@ -555,11 +586,13 @@ awk实现head、tail命令
 打印指定列
 ^^^^^^^^^^^^^^^^^^^^
 - awk方式实现
+
 ::
 
     ls -lrt | awk '{print $6}'
 
 - cut方式实现
+
 ::
 
     ls -lrt | cut -f6
@@ -567,11 +600,13 @@ awk实现head、tail命令
 打印指定文本区域
 ^^^^^^^^^^^^^^^^^^^^
 - 确定行号
+
 ::
 
     seq 100| awk 'NR==4,NR==6{print}'
 
 - 确定文本
+
 ::
 
     awk '/start_pattern/, /end_pattern/' filename
@@ -605,24 +640,27 @@ printf 类似c语言中的printf，对输出进行格式化::
 1. 迭代文件中的每一行
 ^^^^^^^^^^^^^^^^^^^^^
 - while 循环法
+
 ::
 
     while read line;
-	do
-	echo $line;
-	done < file.txt
+    do
+    echo $line;
+    done < file.txt
 
-	改成子shell:
-	cat file.txt | (while read line;do echo $line;done)
+    改成子shell:
+    cat file.txt | (while read line;do echo $line;done)
 
 
 - awk法
+
 ::
 
     cat file.txt| awk '{print}'
 
 2.迭代一行中的每一个单词
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 ::
 
 	for word in $line;
@@ -633,9 +671,11 @@ printf 类似c语言中的printf，对输出进行格式化::
 
 3. 迭代每一个字符
 ^^^^^^^^^^^^^^^^^^^^
-${string:start_pos:num_of_chars}：从字符串中提取一个字符；(bash文本切片）
 
-${#word}:返回变量word的长度
+``${string:start_pos:num_of_chars}`` ：从字符串中提取一个字符；(bash文本切片）
+
+``${#word}`` :返回变量word的长度
+
 ::
 
 	for((i=0;i<${#word};i++))

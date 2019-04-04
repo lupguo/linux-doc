@@ -94,6 +94,7 @@ ftp sftp lftp ssh
 SSH登陆::
 
     $ssh ID@host
+
 ssh登陆远程服务器host，ID为用户名。
 
 
