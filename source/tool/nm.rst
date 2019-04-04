@@ -85,7 +85,7 @@ nm 命令显示关于指定 File 中符号的信息，文件可以是对象文�
 - N  该符号是一个debugging符号。         
 - R  该符号位于只读数据区。
     * 例如定义全局const int test[] = {123, 123};则test就是一个只读数据区的符号。
-    * 值得注意的是，如果在一个函数中定义const char *test = "abc", const char test_int = 3。使用nm都不会得到符号信息，但是字符串"abc"分配于只读存储器中，test在rodata section中，大小为4。 
+    * 值得注意的是，如果在一个函数中定义const char *test = "abc", const char test_int = 3。使用nm都不会得到符号信息，但是字符串"abc"分配于只读存储器中，test在rodata section中，大小为4。
 - S  符号位于非初始化数据区，用于small object。
 - T  该符号位于代码区text section。       
 - U  该符号在当前文件中是未定义的，即该符号的定义在别的文件中。
@@ -102,6 +102,7 @@ nm 命令显示关于指定 File 中符号的信息，文件可以是对象文�
 --------------------
 
 1. 寻找特殊标识
+
 ::
 
 有时会碰到一个编译了但没有链接的代码，那是因为它缺失了标识符；这种情况，可以用``nm``和``objdump``、``readelf``命令来查看程序的符号表；所有这些命令做的工作基本一样；

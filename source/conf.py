@@ -10,11 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-#import os
-#import sys
-#sys.path.insert(0, os.path.abspath('.'))
-#import sphinx_rtd_theme
-
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
@@ -66,27 +64,4 @@ html_static_path = ['_static', '_themes']
 
 html_theme_options = {
     "stickysidebar" : True,
-    # "relbarbgcolor": "#5457b7",
-    # "sidebarbgcolor": "#ac4142",
-    # "footerbgcolor": "#5457b7",
-    # "rightsidebar": "true",
-    # "relbarbgcolor": "black"
 }
-
-# html_logo = "./_static/logo-sphinx.jpg"
-
-# html_theme_options = {
-#     'canonical_url': '',
-#     'logo_only': False,
-#     'display_version': True,
-#     'prev_next_buttons_location': 'bottom',
-#     'style_external_links': False,
-#     'style_nav_header_background': 'blue',
-#
-#     # Toc options
-#     'collapse_navigation': False,
-#     'sticky_navigation': True,
-#     'navigation_depth': 4,
-#     'includehidden': False,
-#     'titles_only': False
-# }

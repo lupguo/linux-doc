@@ -88,10 +88,9 @@ sar -W：查看页面交换发生状况
 安装
 ----
 
-1. 有的linux系统下，默认可能没有安装这个包，使用apt-get install sysstat 来安装； 
-2. 安装完毕，将性能收集工具的开关打开： vi /etc/default/sysstat 
-  设置 ENABLED="true" 
-3. 启动这个工具来收集系统性能数据： /etc/init.d/sysstat start
+1. 有的linux系统下，默认可能没有安装这个包，使用 ``apt-get install sysstat`` 来安装；
+2. 安装完毕，将性能收集工具的开关打开： ``vi /etc/default/sysstat`` 设置 ``ENABLED="true"``
+3. 启动这个工具来收集系统性能数据： ``/etc/init.d/sysstat start``
 
 sar参数说明
 -----------

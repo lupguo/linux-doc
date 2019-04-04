@@ -1,7 +1,7 @@
 .. _rst-overview:
 
 Sphinx 基础
-============================
+=====================
 
 .. note::
 
@@ -20,7 +20,8 @@ Sphinx 基础
     :numbered:
 
     try
-    RestructureText Index <http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>>
+    admonition
+    RestructureText Index <http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>
 
 ----
 

@@ -25,6 +25,7 @@ wget [参数] [URL地址]
 
 记录和输入文件参数
 ~~~~~~~~~~~~~~~~~~~~
+
 - -o, –output-file=FILE 把记录写到FILE文件中
 - -a, –append-output=FILE 把记录追加到FILE文件中
 - -d, –debug 打印调试输出
@@ -34,9 +35,9 @@ wget [参数] [URL地址]
 - -i, –input-file=FILE 下载在FILE文件中出现的URLs
 - -F, –force-html 把输入文件当作HTML格式文件对待
 - -B, –base=URL 将URL作为在-F -i参数指定的文件中出现的相对链接的前缀
-–sslcertfile=FILE 可选客户端证书
-–sslcertkey=KEYFILE 可选客户端证书的KEYFILE
-–egd-file=FILE 指定EGD socket的文件名
+- –sslcertfile=FILE 可选客户端证书
+- –sslcertkey=KEYFILE 可选客户端证书的KEYFILE
+- –egd-file=FILE 指定EGD socket的文件名
 
 下载参数
 ~~~~~~~~~~
@@ -92,6 +93,7 @@ FTP 选项参数
 
 递归下载参数
 ~~~~~~~~~~~~~~~
+
 - -r, –recursive 递归下载－－慎用!
 - -l, –level=NUMBER 最大递归深度 (inf 或 0 代表无穷)
 - -delete-after 在现在完毕后局部删除文件
@@ -112,12 +114,14 @@ FTP 选项参数
 - -I, –include-directories=LIST 允许目录的列表
 - -X, –exclude-directories=LIST 不被包含目录的列表
 - -np, –no-parent 不要追溯到父目录
+
 wget -S –spider url 不下载只显示过程
 
 使用实例
 ---------------
 实例1：使用wget下载单个文件
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget http://www.minjieren.com/wordpress-3.1-zh_CN.zip
@@ -126,6 +130,7 @@ wget -S –spider url 不下载只显示过程
 
 实例2：使用wget -O下载并以不同的文件名保存
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget -O wordpress.zip http://www.minjieren.com/download.aspx?id=1080
@@ -134,6 +139,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例3：使用wget –limit -rate限速下载
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget --limit-rate=300k http://www.minjieren.com/wordpress-3.1-zh_CN.zip
@@ -142,6 +148,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例4：使用wget -c断点续传
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget -c http://www.minjieren.com/wordpress-3.1-zh_CN.zip
@@ -150,6 +157,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例5：使用wget -b后台下载
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget -b http://www.minjieren.com/wordpress-3.1-zh_CN.zip
@@ -165,6 +173,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例6：伪装代理名称下载
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     wget --user-agent="Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16" http://www.minjieren.com/wordpress-3.1-zh_CN.zip
@@ -174,6 +183,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例7：使用wget -i下载多个文件
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 首先，保存一份下载链接文件,接着使用这个文件和参数-i下载::
     
     $cat > filelist.txt
@@ -186,6 +196,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例8：使用wget –mirror镜像网站
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget --mirror -p --convert-links -P ./LOCAL URL
@@ -200,6 +211,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例9: 使用wget -r -A下载指定格式文件
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget -r -A.pdf url
@@ -211,6 +223,7 @@ wget默认会以最后一个符合”/”的后面的字符来命令，对于动
 
 实例10：使用wget FTP下载
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
     $wget ftp-url

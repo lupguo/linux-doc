@@ -58,13 +58,13 @@
 
 - 给每项文件前面增加一个id编号(看上去更加整洁)::
 
-  >ls | cat -n
-     1  a
-     2  a.out
-     3  app
-     4  b
-     5  bin
-     6  config
+    >ls | cat -n
+    1  a
+    2  a.out
+    3  app
+    4  b
+    5  bin
+    6  config
 
 注：.bashrc 在/home/你的用户名/ 文件夹下，以隐藏文件的方式存储；可使用 ls -a 查看；
 
@@ -98,10 +98,12 @@ find是实时查找，如果需要更快的查询，可试试locate；locate会�
 
 显示时同时显示行号::
 
-    $cat -n                 
+    $cat -n
+
 按页显示列表内容::
     
-    $ls -al | more          
+    $ls -al | more
+
 只看前10行::
     
     $head - 10 **           

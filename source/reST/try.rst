@@ -2,7 +2,7 @@ Sphinx 安装和使用
 =================
 
 概述
-----
+--------
 
 reStructuredText（reST）是Docutils和Sphinx使用的默认纯文本标记语言。Docutils提供了基本的reStructuredText语法，而Sphinx扩展了它以支持其他功能。
 
@@ -11,7 +11,7 @@ Sphinx是一个工具，它将一组reStructuredText源文件转换为各种输�
 重点是手写文档，而不是自动生成的API文档。虽然也支持这种文档（它可以与手写内容自由混合），如果你需要纯API文档，请查看Epydoc，它也理解reST。
 
 基本介绍
--------
+-------------
 
 Sphinx
 ^^^^^^^^^^^^^^^^^^^^^
@@ -43,12 +43,12 @@ reST文件扩展
 -------
 
 安装要求
-^^^^^^^
+^^^^^^^^^^^^
 
 Sphinx至少需要运行Python 3.5，以及docutils和 Jinja2库。Sphinx应该使用docutils版本0.12或一些（未损坏的）SVN中继快照。
 
 安装操作
-^^^^^^^
+^^^^^^^^^^^^
 ::
 
     // python3环境
@@ -67,7 +67,7 @@ Sphinx至少需要运行Python 3.5，以及docutils和 Jinja2库。Sphinx应该�
     Successfully installed Jinja2 MarkupSafe Pygments Sphinx….
 
 项目构建
--------
+------------
 
 你现在可以填写主文档文件 ``./source/index.rst`` 并创建其他文档源文件了。用 ``Makefile`` 构建文档，像这样::
 
@@ -76,7 +76,7 @@ Sphinx至少需要运行Python 3.5，以及docutils和 Jinja2库。Sphinx应该�
 此处的“builder”是支持的构建器名，比如 ``html、latex 或 linkcheck``。
 
 调试部分
-------
+-----------
 
 .. glossary::
 
@@ -91,10 +91,10 @@ Sphinx至少需要运行Python 3.5，以及docutils和 Jinja2库。Sphinx应该�
       source files for one Sphinx project.
 
 参考
-----
+---------
 
-.. [1] PIP3安装:  https://pip.pypa.io/en/stable/installing/
-.. [#] Sphinx安装: http://www.sphinx-doc.org/en/master/usage/installation.html
+.. [ ] PIP3安装:  https://pip.pypa.io/en/stable/installing/
+.. [ ] Sphinx安装: http://www.sphinx-doc.org/en/master/usage/installation.html
 .. [#] 入门:  http://www.sphinx-doc.org/en/master/usage/quickstart.html
 .. [#] 官方网站: https://sphinx-themes.org/
 .. [#] 默认主题: https://sphinx-themes.org/html/default/classic/index.html
