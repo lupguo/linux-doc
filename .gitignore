@@ -1,0 +1,4 @@
+/venv
+build/
+.idea/
+source/sphinx_rtd_theme/
