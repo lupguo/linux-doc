@@ -72,7 +72,7 @@ html_theme_options = {
     "headbgcolor": "#e6e3bd",
 
     "sidebartextcolor": "#fdc261",
-    "textcolor": "#ffffff",
+    "textcolor": "#000000",
 
     # 左侧边栏
     "sidebarlinkcolor": "#ffffff",
