@@ -63,8 +63,17 @@ html_theme = "classic"
 html_static_path = ['_static', '_themes']
 
 html_theme_options = {
-    "stickysidebar" : True,
-    "footerbgcolor" : "#4f6873",
-    "sidebarbgcolor" : "#ac4142",
-    "headbgcolor" : "#e6e3bd",
+    "stickysidebar": True,
+
+    # 背景色
+    "relbarbgcolor": "#f75a1ea6",
+    "sidebarbgcolor": "#ac4142",
+    "footerbgcolor": "#4f6873",
+    "headbgcolor": "#e6e3bd",
+
+    "sidebartextcolor": "#fdc261",
+    "textcolor": "#ffffff",
+
+    # 左侧边栏
+    "sidebarlinkcolor": "#ffffff",
 }
