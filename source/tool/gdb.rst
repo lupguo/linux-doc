@@ -15,6 +15,7 @@ GDB是一个由GNU开源组织发布的、UNIX/LINUX操作系统下的、基于�
 调试可执行文件::
 
     $gdb <program>
+
 program也就是你的执行文件，一般在当前目录下。
 
 调试core文件(core是程序非法执行后core dump后产生的文件)::
@@ -26,6 +27,7 @@ program也就是你的执行文件，一般在当前目录下。
 
     $gdb <program> <PID>
     $gdb hello 11127
+
 如果你的程序是一个服务程序，那么你可以指定这个服务程序运行时的进程ID。gdb会自动attach上去，并调试他。program应该在PATH环境变量中搜索得到。
 
 gdb交互命令

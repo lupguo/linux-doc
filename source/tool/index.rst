@@ -4,7 +4,7 @@ Linux工具参考篇
 ====================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :numbered: 3
 
     gdb

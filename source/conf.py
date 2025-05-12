@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'Linux Learning'
-copyright = '2019, Terry.Rod'
+copyright = '2025, Terry.Rod'
 author = 'Terry.Rod'
 
 # The full version, including alpha/beta/rc tags
@@ -53,27 +53,50 @@ pygments_style ='sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = "classic"
+# html_theme = "classic"
 # html_theme = "bizstyle"
-# html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static', '_themes']
 
+
+# html_style = 'custom.css'
+
+# html_theme_options = {
+#     "stickysidebar": True,
+#
+#     # 背景色
+#     "relbarbgcolor": "#f75a1ea6",
+#     "sidebarbgcolor": "#ac4142",
+#     "footerbgcolor": "#4f6873",
+#     "headbgcolor": "#e6e3bd",
+#
+#     "sidebartextcolor": "#fdc261",
+#     "textcolor": "#000000",
+#
+#     # 左侧边栏
+#     "sidebarlinkcolor": "#ffffff",
+# }
+
 html_theme_options = {
-    "stickysidebar": True,
+    # 'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    'analytics_anonymize_ip': False,
+    'logo_only': False,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    'style_nav_header_background': '#bf0000',
+    'flyout_display': 'hidden',
+    'version_selector': True,
+    'language_selector': True,
 
-    # 背景色
-    "relbarbgcolor": "#f75a1ea6",
-    "sidebarbgcolor": "#ac4142",
-    "footerbgcolor": "#4f6873",
-    "headbgcolor": "#e6e3bd",
-
-    "sidebartextcolor": "#fdc261",
-    "textcolor": "#000000",
-
-    # 左侧边栏
-    "sidebarlinkcolor": "#ffffff",
+    # Toc options
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
 }

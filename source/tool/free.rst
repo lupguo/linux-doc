@@ -22,6 +22,7 @@ free工具用来查看系统可用内存::
     2 Mem:      24677460   23276064    1401396          0     870540   12084008
     3 -/+ buffers/cache:   10321516   14355944
     4 Swap:     25151484     224188   24927296
+
 free的输出一共有四行，第四行为交换区的信息，分别是交换的总量（total），使用量（used）和有多少空闲的交换区（free），这个比较清楚，不说太多。
 
 free输出地第二行和第三行是比较让人迷惑的。这两行都是说明内存使用情况的。第一列是总量（total），第二列是使用量（used），第三列是可用量（free）。
@@ -42,6 +43,7 @@ FO[2][5]表示被OS buffer住的内存。FO[2][6]表示被OS cache的内存。�
 
     A buffer is something that has yet to be "written" to disk. 
     A cache is something that has been "read" from the disk and stored for later use.
+
 也就是说buffer是用于存放要输出到disk（块设备）的数据的，而cache是存放从disk上读出的数据。这二者是为了提高IO性能的，并由OS管理。
 
 Linux和其他成熟的操作系统（例如windows），为了提高IO read的性能，总是要多cache一些数据，这也就是为什么FO[2][6]（cached memory）比较大，而FO[2][3]比较小的原因。我们可以做一个简单的测试:
@@ -68,6 +70,7 @@ free输出的第二行是从一个应用程序的角度看系统内存的使用�
 
     FO[3][2] = FO[2][2] - FO[2][5] - FO[2][6]
     FO[3][3] = FO[2][3] + FO[2][5] + FO[2][6]
+
 这二者都不难理解。
 
 free命令由procps.*.rpm提供（在Redhat系列的OS上）。free命令的所有输出值都是从/proc/meminfo中读出的。

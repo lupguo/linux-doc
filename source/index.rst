@@ -7,14 +7,12 @@ Linux Documentation
 ===================
 
 .. toctree::
-    :maxdepth: 2
-    :caption: Contents:
+    :maxdepth: 4
+    :caption: Contents
 
     base/index
     advance/index
     tool/index
-
-    reST/index
 
 Indices and tables
 ==================
